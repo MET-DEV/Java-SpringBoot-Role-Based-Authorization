@@ -25,10 +25,10 @@ public class UsersController {
 
 
     @Autowired
-    public UsersController(UserRepository userRepository, AuthenticationManager authenticationManager, TokenManager tokenManager, UserDetailsServiceImpl userDetailsService) {
+    public UsersController( AuthenticationManager authenticationManager, TokenManager tokenManager) {
         this.authenticationManager = authenticationManager;
         this.tokenManager = tokenManager;
-        this.userDetailsService = userDetailsService;
+
     }
 
     @PostMapping("login")
@@ -61,9 +61,5 @@ public class UsersController {
     public String newPage(){
         return "Hello, this is admin";
     }
-
-
-
-
 
 }
